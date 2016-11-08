@@ -8,7 +8,7 @@ var CountdownForm = require('CountdownForm');
 
 describe('CountdownForm', () => {
   it('should exist', () => {
-    expect('CountdownForm').toExist();
+    expect(CountdownForm).toExist();
   });
 
   it('should call onSetCountdown if valid seconds entered', () => {
