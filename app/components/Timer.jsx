@@ -29,22 +29,21 @@ var Timer = React.createClass({
   },
   startTimer: function () {
     this.timer = setInterval(() => {
-      var newCount = this.state.count + 1;
       this.setState({
-        count: newCount
+        count: this.state.count + 1
       });
     }, 1000);
   },
-  handleStatusChange: function (newStatus) {
-    this.setState({timerStatus: newStatus});
+  handleStatusChange: function (newTimerStatus) {
+    this.setState({timerStatus: newTimerStatus});
   },
   render: function () {
     var {count, timerStatus} = this.state;
     return (
       <div>
-        <h1 className="page-title">Timer Component</h1>
+        <h1 className="page-title">Timer App</h1>
         <Clock totalSeconds={count} />
-        <Controls timerStatus={timerStatus} onStatusChange={this.handleStatusChange} />
+        <Controls countdownStatus={timerStatus} onStatusChange={this.handleStatusChange} />
       </div>
     );
   }
